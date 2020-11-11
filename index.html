@@ -16,6 +16,12 @@
             line-height: 100px;
             text-align: center;
             border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .download:active{
+            background-color: #fff;
+            color: #131313;
         }
     </style>
 
@@ -35,16 +41,16 @@
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android終端 
         var isiOS = !!u.match(/\(i[^;] ;( U;)? CPU. Mac OS X/); //ios終端 
         if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信內建瀏覽器
-            $(".download a").click(function(){
+            $(".download").click(function(){
             window.location.href='https://www.google.com.tw/'
         });
         }else{
             if(isiOS){
-            $(".download a").click(function(){
+            $(".download").click(function(){
             window.location.href='https://tw.yahoo.com/'
             });
             }else if(isAndroid){
-            $(".download a").click(function(){
+            $(".download").click(function(){
             window.location.href='https://www.gamer.com.tw/'
         });
         }    
