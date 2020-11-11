@@ -9,23 +9,10 @@
             background-color: #131313;
             color: #fff;
         }
-        .download{
-            width: 100px;
-            height: 100px;
-            font-size: 30px;
-            line-height: 100px;
-            text-align: center;
-            border: 1px solid #fff;
-            cursor: pointer;
-        }
 
-        .download:active{
-            background-color: #fff;
-            color: #131313;
-        }
     </style>
 
-    <div class="download"><a>2</a> </div>
+    <p>第3版</p>
 </head>
 <body>
     
@@ -33,34 +20,19 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js'></script>
 <script>
-    
-    function downloadApp(){
-        var u = navigator.userAgent; 
-        var ua = navigator.userAgent.toLowerCase(); 
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
-        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android終端 
-        var isiOS = !!u.match(/\(i[^;] ;( U;)? CPU. Mac OS X/); //ios終端 
-        if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信內建瀏覽器
-            $(".download").click(function(){
-            window.location.href='https://www.google.com.tw/'
-        });
-        }else{
-            if(isiOS){
-            $(".download").click(function(){
-            window.location.href='https://tw.yahoo.com/'
-            });
-            }else if(isAndroid){
-            $(".download").click(function(){
-            window.location.href='https://www.gamer.com.tw/'
-        });
-        }    
-       }
-    } 
-  
-</script>
-
-
-    
+    // alert('是否是Android：'+isAndroid);
+    // alert('是否是iOS：'+isiOS);
+    // ===========================================================================================
+    if(isAndroid){
+        alert('是否是Android：'+isAndroid);
+    }else if(isiOS){
+        alert('是否是iOS：'+isiOS);
+    }
+ 
 </script>
 </body>
 </html>
