@@ -12,7 +12,7 @@
 
     </style>
 
-    <p>第3版</p>
+    <p>第4版是 <span></span></p>
 </head>
 <body>
     
@@ -28,9 +28,10 @@
     // alert('是否是iOS：'+isiOS);
     // ===========================================================================================
     if(isAndroid){
-        alert('是否是Android：'+isAndroid);
+        $(span).text('Android')
+
     }else if(isiOS){
-        alert('是否是iOS：'+isiOS);
+        $(span).text('iOS')
     }
  
 </script>
